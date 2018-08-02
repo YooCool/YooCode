@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    [#include 'Dis_headMeta.html'/]
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>头部</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/index.css" />
+</head>
+
+<body>
+    [#escape x as (x)!?html]
+    <!--导航栏开始-->
+    <header id="header">
+
+        <div class="container">
+            <div class="logo">
+                <img src="http://p1icwc5x5.bkt.clouddn.com/logo.png">
+            </div>
+        </div>
+        <div class="nav container">
+            <ul class="clearfix container">
+                [@NodeList;list] 
+                [#list list as node]
+                <li>
+                    <a href="${node.url}">${node.name}</a>
+                    <ul>
+                        [@NodeList parentId=node.id;list] 
+                        [#list list as node2]
+                        <li>
+                            <a href="${node2.url}">${node2.name}</a>
+                        </li>
+                        [/#list]
+                        [/@NodeList]
+                    </ul>
+                </li>
+                [/#list]
+                [/@NodeList]
+            </ul>
+        </div>
+
+    </header>
+    <!-- 导航结束 -->
+    [/#escape]
+</body>
+
+</html>

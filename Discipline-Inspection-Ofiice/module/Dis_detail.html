@@ -1,0 +1,66 @@
+[#escape x as (x)!?html]
+<!doctype html>
+<html lang="en">
+
+<head>
+    [#include 'Dis_headMeta.html'/]
+</head>
+
+<body>
+
+    [#include 'Dis_header.html'/]
+
+    <div class="container">
+        [#include 'Dis_location.html'/]
+        <div class="news clearfix">
+            <div class="news-detail">
+                <h1>${info.title}</h1>
+                <p class="fabu">
+                    <span>发布时间: ${info.publishDate?string('yyyy-MM-dd HH:mm:ss')}</span>
+                    <span>作者：${info.author}</span>
+                    <span>来源：${info.source}</span>
+                </p>
+
+                <div class="content-detail">
+                    [#noescape]${text}[/#noescape]
+                </div>
+            </div>
+            <div class="bottom-detail clearfix">
+                <div>
+                    <ul>
+                        [@InfoPrev id=info.id;bean] [#if bean??]
+                        <li>
+                            <span>上一条：</span>
+                            <a href="${bean.url}">${bean.title!}</a>
+                            <span style="color: #333; font-size: 14px;">${bean.publishDate?string('yyyy-MM-dd')}</span>
+                        </li>
+                        [#else]
+                        <li>
+                            <span>上一条：</span>
+                            <span>没有了</span>
+                        </li>
+                        [/#if] [/@InfoPrev] 
+                        [@InfoNext id=info.id;i] [#if i??]
+                        <li>
+                            <span>下一条：</span>
+                            <a href="${i.url}">${i.title!}</a>
+                            <span style="color: #333; font-size: 14px;">${i.publishDate?string('yyyy-MM-dd')}</span>
+                        </li>
+                        [#else]
+                        <li>
+                            <span>下一条：</span>
+                            <span>没有了</span>
+                        </li>
+                        [/#if] [/@InfoNext]
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    [#include 'Dis_footer.html'/]
+
+</body>
+
+</html>
+[/#escape]

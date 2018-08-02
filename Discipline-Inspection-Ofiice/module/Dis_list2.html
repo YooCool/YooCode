@@ -1,0 +1,56 @@
+[#escape x as (x)!?html]
+<!doctype html>
+<html lang="en">
+
+<head>
+    [#include 'Dis_headMeta.html'/]
+</head>
+
+<body>
+
+    [#include 'Dis_header.html'/]
+    <div class="container">
+        [#include 'Dis_location.html'/]
+        <!-- <h2 class="title">重要新闻</h2> -->
+        <div class="news clearfix">
+            <div class="span8">
+                <div class="news-list">
+                    <ul>
+                        [@InfoPage nodeId=node.id pageSize='10' isIncludeChildren='true';pagedList] [#list pagedList.content as info]
+                        <li>
+                            <a href="${info.url}">${substring(info.title,45,'...')}
+                                <span>${info.publishDate?string('yyyy-MM-dd')}</span>
+                            </a>
+                        </li>
+                        [/#list]
+                        <table class="center mt20">
+                            <tr>
+                                <td>
+                                    [#include 'Dis_page.html'/]
+                                </td>
+                            </tr>
+                        </table>
+                        [/@InfoPage]
+                    </ul>
+                </div>
+
+            </div>
+            <div class="span2">
+                <div class="new-nav"> <!--为党纪法治或教育专栏，这是一个二级栏目-->
+                    [@NodeList parentId=node.id;list]   <!--党纪法治里面有四个栏目，三级栏目。-->
+                    <h3>${node.name}</h3>  
+                    <ul list>
+                        [#list list as node]   <!--这个list应该是模板文件的名字 list.html,我这里应该改一下名字-->
+                        <li><a href="${node.url}">${node.name}</a></li>
+                        [/#list]
+                    </ul>
+                    [/@NodeList]
+                </div>
+           </div>
+        </div>
+    </div>
+    [#include 'Dis_footer.html'/]
+</body>
+
+</html>
+[/#escape]

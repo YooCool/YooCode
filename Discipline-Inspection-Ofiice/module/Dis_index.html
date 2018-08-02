@@ -1,0 +1,322 @@
+[#escape x as (x)!?html]
+<!doctype html>
+<html lang="en">
+
+<head>
+    [#include 'Dis_headMeta.html'/]
+</head>
+
+<body>
+    [#include 'Dis_header.html'/]
+<!-- 当前位置 -->
+<h1 class="location container">
+    <i class="icons-sprite icons-home"></i>
+    <span>您的位置 :</span>&nbsp;&nbsp;
+    <a>济宁医学院附属医院</a> &gt;
+    <a class="cur">${node.name}</a>
+</h1> 
+
+<!-- 工作动态+通知公告+热点时讯 -->
+<div class="content-center" style="white-space: nowrap;">
+
+    <!-- 工作动态 -->
+    <div class="item_info">
+        <div class="info_top">
+            [@Node number='jwworkdyn';node]
+            <p>${node.name}</p>
+            <span>
+                <a href="${node.url}" target="_blank">更多 >></a>
+            </span>
+            [/@Node]
+        </div>
+        <div class="info_bottom">
+            <ul>
+                [@InfoList node='jwworkdyn' limit='4';list] [#list list as dynamic]
+                <li class="add-dot clear-float">
+                    <div class="left-dot"></div>
+                    <a href="${dynamic.url}" target="_blank">${dynamic.title}</a>
+                    <span>${dynamic.publishDate?string('yyyy-MM-dd')}</span>
+                </li>
+                [/#list] [/@InfoList]
+            </ul>
+        </div>
+    </div>
+
+    <!-- 通知公告 -->
+    <div class="item_info">
+        <div class="info_top">
+            [@Node number='jwnotice';node]
+            <p>${node.name}</p>
+            <span>
+                <a href="${node.url}" target="_blank">更多 >></a>
+            </span>
+            [/@Node]
+        </div>
+        <div class="info_bottom">
+            <ul>
+                [@InfoList node='jwnotice' limit='4';list] [#list list as notice]
+                <li class="add-dot clear-float">
+                    <div class="left-dot"></div>
+                    <a href="${notice.url}" target="_blank">${notice.title}</a>
+                    <span>${notice.publishDate?string('yyyy-MM-dd')}</span>
+                </li>
+                [/#list] [/@InfoList]
+            </ul>
+        </div>
+    </div>
+    <!-- 热点时讯 -->
+    <div class="item_info">
+        <div class="info_top">
+            [@Node number='jwhotnews';node]
+            <p>${node.name}</p>
+            <span>
+                <a href="${node.url}" target="_blank">更多 >></a>
+            </span>
+            [/@Node]
+        </div>
+        <div class="info_bottom">
+            <ul>
+                [@InfoList node='jwhotnews' limit='4';list] [#list list as hotnews]
+                <li class="add-dot clear-float">
+                    <div class="left-dot"></div>
+                    <a href="${hotnews.url}" target="_blank">${hotnews.title}</a>
+                    <span>${hotnews.publishDate?string('yyyy-MM-dd')}</span>
+                </li>
+                [/#list] [/@InfoList]
+            </ul>
+        </div>
+    </div>
+    <!-- 图片 -->
+   <div class="content-center">
+     <img src="http://p1icwc5x5.bkt.clouddn.com/img_background.png" alt="">
+   </div>
+    
+   <!-- 党纪法规+教育专栏 -->
+    <div class="content-center" style="white-space: nowrap;">
+        <div class="party_left" style="white-space: normal;">
+            <div class="party-top">
+                <!--跳左侧带有列表的党纪法规列表页面，node的名字是上传的栏目模型后，为党纪法规起的名字-->
+                [@Node number='jwpartylaws';node]
+                    <a href="${node.url}" style="color: #fff;" target="_blank">
+                        <p>${node.name}</p>
+                    </a>
+                [/@Node]
+            </div>
+
+            <!-- 党内制度 -->
+            <div class="party_info">
+                <div class="partyInfo_top">
+                    [@Node number='jwsystem';node]
+                    <p>${node.name}</p>
+                    <span>
+                        <a href="${node.url}" target="_blank">更多 >></a>
+                        <!--跳转到和点击党纪法规一样的界面，右侧有四个栏目，左侧是列表。-->
+                    </span>
+                    [/@Node]
+                </div>
+                <div class="partyInfo_bottom">
+                    <ul>
+                        [@InfoList node='jwsystem' limit=4;list] [#list list as system]
+                        <li class="add-dot clear-float">
+                            <div class="left-dot"></div>
+                            <a href="${system.url}" target="_blank">${system.title}</a>
+                            <!--跳转到详情页-->
+                        </li>
+                        [/#list] [/@InfoList]
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 法律法规 -->
+            <div class="party_info">
+                <div class="partyInfo_top">
+                    [@Node number='jwregulation';node]
+                    <p>${node.name}</p>
+                    <span>
+                        <a href="${node.url}" target="_blank">更多 >></a>
+                    </span>
+                    [/@Node]
+                </div>
+                <div class="partyInfo_bottom">
+                    <ul>
+                        [@InfoList node='jwregulation' limit=4;list] [#list list as regulation]
+                        <li class="add-dot clear-float">
+                            <div class="left-dot"></div>
+                            <a href="${regulation.url}" target="_blank">${regulation.title}</a>
+                        </li>
+                        [/#list] [/@InfoList]
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 医院规章制度 -->
+            <div class="party_info">
+                <div class="partyInfo_top2">
+                    [@Node number='jwhosruler';node]
+                    <p>${node.name}</p>
+                    <span>
+                        <a href="${node.url}" target="_blank">更多 >></a>
+                    </span>
+                    [/@Node]
+                </div>
+                <div class="partyInfo_bottom">
+                    <ul>
+                        [@InfoList node='jwhosruler' limit=4;list] [#list list as hosruler]
+                        <li class="add-dot clear-float">
+                            <div class="left-dot"></div>
+                            <a href="${hosruler.url}" target="_blank">${hosruler.title}</a>
+                        </li>
+                        [/#list] [/@InfoList]
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 法规制度释义 -->
+            <div class="party_info">
+                <div class="partyInfo_top2">
+                    [@Node number='jwexplain';node]
+                    <p>${node.name}</p>
+                    <span>
+                        <a href="${node.url}" target="_blank">更多 >></a>
+                    </span>
+                    [/@Node]
+                </div>
+                <div class="partyInfo_bottom">
+                    <ul>
+                        [@InfoList node='jwexplain' limit=4;list] [#list list as explain]
+                        <li class="add-dot clear-float">
+                            <div class="left-dot"></div>
+                            <a href="${explain.url}" target="_blank">${explain.title}</a>
+                        </li>
+                        [/#list] [/@InfoList]
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 教育专栏 -->
+        <div class="edu_right" style="white-space: normal;">
+            <div class="edu-top">
+                [@Node number='jwedu';node]
+                    <a href="${node.url}" style="color: #fff;" target="_blank">
+                        <p>${node.name}</p>
+                    </a>
+                [/@Node]
+            </div>
+
+            <!--警钟长鸣-->
+            <div class="edu_info">
+                <div class="partyInfo_top">
+                    [@Node number='jwclock';node]
+                    <p>${node.name}</p>
+                    <span>
+                        <a href="${node.url}" target="_blank">更多 >></a>
+                    </span>
+                    [/@Node]
+                </div>
+                <div class="eduInfo_bottom">
+                    <ul>
+                        [@InfoList node='jwclock' limit=4;list] [#list list as clock]
+                        <li class="add-dot clear-float">
+                            <div class="left-dot"></div>
+                            <a href="${clock.url}" target="_blank">${clock.title}</a>
+                        </li>
+                        [/#list] [/@InfoList]
+                    </ul>
+                </div>
+            </div>
+
+
+            <!--廉洁文化-->
+            <div class="edu_info">
+                <div class="partyInfo_top">
+                    [@Node number='jwprobity';node]
+                    <p>${node.name}</p>
+                    <span>
+                        <a href="${node.url}" target="_blank">更多 >></a>
+                    </span>
+                    [/@Node]
+                </div>
+                <div class="eduInfo_bottom">
+                    <ul>
+                        [@InfoList node='jwprobity' limit=4;list] [#list list as probity] 
+                        <li class="add-dot clear-float">
+                            <div class="left-dot"></div>
+                            <a href="${probity.url}" target="_blank">${probity.title}</a>
+                        </li>
+                        [/#list] [/@InfoList]
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    
+</div>   
+    <!-- 联系我们+相关链接+下载专栏 -->
+    <div class="content-center link-us">
+        <div class="link-right">
+            <div class="some-link">
+                <div class="link-top">
+                    <span>相关链接</span>
+                </div>
+                <div class="link-bottom">
+                    <a href="http://www.ccdi.gov.cn/" target="_blank">中央纪委监察网</a>
+                    <a href="http://www.sdjj.gov.cn/" target="_blank">山东省纪委监察厅网站</a>
+                    <a href="http://www.moe.gov.cn/" target="_blank">教育部网站</a>
+                    <a href="http://www.cczglz.com/" target="_blank">中国廉政网</a>
+                    <a href="http://jw.jnmc.edu.cn/" target="_blank">济宁医学院纪检监察网</a>
+                </div>
+            </div>
+            <div class="react-us">
+                <div class="us-top">
+                    <span>联系我们</span>
+                </div>
+                <div class="us-bottom">
+                    <p>
+                        <a href="http://www.jyfy.com.cn/" target="_blank">中共济宁医学院附属医院</a>
+                        <a href="http://www.ccdi.gov.cn/"target="_blank">纪律检查委员会</a>
+                    </p>
+
+                    <p>
+                        <span>济宁医学院附属医院监察室</span>
+                    </p>
+                    <p>
+                        <span>联系电话：0537-2903277</span>
+                    </p>
+                    <p>
+                        <a href="mailto=jyfyjw3090@163.com">电子邮箱：jyfyjw3090@163.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--下载专栏-->
+        <div class="for-download">
+            <div class="partyInfo_top">
+                [@Node number='jwdownload';node]
+                <p>${node.name}</p>
+                <span>
+                    <a href="${node.url}" target="_blank">更多 >></a>
+                    <!--跳转到jwdownload的列表页，这是栏目模型-->
+                </span>
+                [/@Node]
+            </div>
+            <div class="eduInfo_bottom">
+                <ul>
+                    [@InfoList node='jwdownload' limit=4;list] [#list list as download]
+                    <li class="add-dot clear-float">
+                        <div class="left-dot"></div>
+                        <a href="${download.url}" target="_blank">${download.title}</a>
+                        <!--跳转到download的详情页，这是列表模型-->
+                    </li>
+                    [/#list] [/@InfoList]
+                </ul>
+            </div>
+        </div>
+    </div>
+    [#include 'Dis_footer.html'/]
+</body>
+
+</html>
+[/#escape]

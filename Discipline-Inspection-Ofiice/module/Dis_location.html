@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    [#include 'Dis_headMeta.html'/]
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>头部</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/index.css" />
+</head>
+
+<body>
+    [#escape x as (x)!?html]
+    <!--导航栏开始-->
+    <header id="location2">
+      <h1 class="location">
+            <i class="icons-sprite icons-home"></i>
+            <span>您的位置 :</span>&nbsp;&nbsp;
+            <a href="/">济宁医学院附属医院</a> &gt;
+            <a href="http://47.93.138.57:7775/node/175.jspx">医院纪委网</a> &gt;
+            [#if node.parent.id==175][#else]
+            <a href="${node.parent.url}">${node.parent.name}</a> &gt;[/#if]
+            <a class="cur" href="${node.url}">${node.name}</a>
+        </h1>
+
+    </header>
+    <!-- 导航结束 -->
+    [/#escape]
+</body>
+
+</html>

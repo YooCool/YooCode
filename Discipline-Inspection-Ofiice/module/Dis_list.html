@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    [#include 'Dis_headMeta.html'/]
+    <!-- <link type="text/css" rel="stylesheet" href="../css/reset.css"> -->
+    <!-- <link type="text/css" rel="stylesheet" href="../css/index.css"> -->
+    <!-- <link type="text/css" rel="stylesheet" href="_files/stylesheets/style.css"> -->
+</head>
+
+<body>
+    [#include 'Dis_header.html'/]
+    <div class="container">
+        [#include 'Dis_location.html'/]
+        <!-- <h2 class="title">重要新闻</h2> -->
+        <div class="news clearfix">
+            <div class="span8" style="width: 100% ;">
+                <div class="news-list" style="margin: 0px;">
+                    <ul>
+                        [@InfoPage nodeId=node.id pageSize='10' isIncludeChildren='true';pagedList] [#list pagedList.content as info]
+                        <li>
+                            <a href="${info.url}">${substring(info.title,45,'...')}
+                                <span>${info.publishDate?string('yyyy-MM-dd')}</span>
+                            </a>
+                        </li>
+                        [/#list]
+                        <table class="center mt20">
+                            <tr>
+                                <td>
+                                    [#include 'Dis_page.html'/]
+                                </td>
+                            </tr>
+                        </table>
+                        [/@InfoPage]
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    [#include 'Dis_footer.html'/]
+</body>
+
+</html>

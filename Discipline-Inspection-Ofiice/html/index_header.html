@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>头部</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/index.css" />
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" /> -->
+    <!-- <script src="main.js"></script> -->
+</head>
+
+<body>
+    <!-- [#escape x as (x)!?html] -->
+    <!--导航栏开始-->
+    <header id="header">
+
+        <div class="container">
+            <div class="logo">
+                <img src="_files/img/logo.png">
+            </div>
+        </div>
+        <div class="nav container">
+            <ul class="clearfix container">
+                <li>
+                    <!-- <a href="${ctx}/" [#if node?? && !node.parent??] [/#if]>医院首页</a> -->
+                    <a href="#">医院首页</a>
+                </li>
+                <li>
+                    <a href="#">医院概况</a>
+                    <ul>
+                        <!-- [@NodeList parentId=node.id;list] [#list list as node2] -->
+                        <li>
+                            <a href="#">医院简介</a>
+                        </li>
+                        <li>
+                            <a href="#">领导介绍</a>
+                        </li>
+                        <!-- [/#list] [/@NodeList] -->
+                    </ul>
+                </li>
+                <li>
+                    <!-- <a href="${ctx}/" [#if node?? && !node.parent??] [/#if]>医院首页</a> -->
+                    <a href="#">医院文化</a>
+                    <ul>
+                        <!-- [@NodeList parentId=node.id;list] [#list list as node2] -->
+                        <li>
+                            <a href="#">医院简介</a>
+                        </li>
+                        <li>
+                            <a href="#">领导介绍</a>
+                        </li>
+                        <!-- [/#list] [/@NodeList] -->
+                    </ul>
+                </li>
+                <li>
+                    <!-- <a href="${ctx}/" [#if node?? && !node.parent??] [/#if]>医院首页</a> -->
+                    <a href="#">医院首页</a>
+                </li>
+                <li>
+                    <!-- <a href="${ctx}/" [#if node?? && !node.parent??] [/#if]>医院首页</a> -->
+                    <a href="#">医院首页</a>
+                </li>
+                <li>
+                    <!-- <a href="${ctx}/" [#if node?? && !node.parent??] [/#if]>医院首页</a> -->
+                    <a href="#">医院首页</a>
+                </li>
+                <li>
+                    <!-- <a href="${ctx}/" [#if node?? && !node.parent??] [/#if]>医院首页</a> -->
+                    <a href="#">医院首页</a>
+                </li>
+                <li>
+                    <!-- <a href="${ctx}/" [#if node?? && !node.parent??] [/#if]>医院首页</a> -->
+                    <a href="#">医院首页</a>
+                </li>
+                <li>
+                    <!-- <a href="${ctx}/" [#if node?? && !node.parent??] [/#if]>医院首页</a> -->
+                    <a href="#">医院首页</a>
+                </li>
+                <li>
+                    <!-- <a href="${ctx}/" [#if node?? && !node.parent??] [/#if]>医院首页</a> -->
+                    <a href="#">医院首页</a>
+                </li>
+                <li>
+                    <!-- <a href="${ctx}/" [#if node?? && !node.parent??] [/#if]>医院首页</a> -->
+                    <a href="#">医院首页</a>
+                </li>
+                <li>
+                    <!-- <a href="${ctx}/" [#if node?? && !node.parent??] [/#if]>医院首页</a> -->
+                    <a href="#">医院首页</a>
+                </li>
+                <!-- [@NodeList;list] [#list list as node] -->
+
+                <!-- <li>
+                    <a href="${node.url}">${node.name}</a>
+                    <ul>
+                        [@NodeList parentId=node.id;list] [#list list as node2]
+                        <li>
+                            <a href="${node2.url}">${node2.name}</a>
+                        </li>
+                        [/#list] [/@NodeList]
+                    </ul>
+                </li> -->
+
+                <!-- [/#list] [/@NodeList] -->
+            </ul>
+            <!-- <h1 class="location">
+                <i class="icons-sprite icons-home"></i>
+                <span>您的位置:</span>
+                <a>济宁医学院附属医院</a> &gt; -->
+                <!-- <a class="cur">${node.name}</a> -->
+                <!-- <a class="cur">医院纪委网</a>
+            </h1> -->
+        </div>
+
+    </header>
+    <!-- 导航结束 -->
+    <!-- [/#escape] -->
+</body>
+
+</html>

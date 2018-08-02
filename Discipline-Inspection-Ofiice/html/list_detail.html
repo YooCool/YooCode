@@ -1,0 +1,271 @@
+<!-- [#escape x as (x)!?html] -->
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- [#include 'headMeta.html'/] -->
+
+    <link type="text/css" rel="stylesheet" href="../css/style.css">
+    <!-- <script src="_files/js/jquery.js"></script> -->
+    <!-- [#include 'headScript.html'/] -->
+</head>
+
+<body>
+
+    <!-- [#include 'header.html'/] -->
+    <header id="header">
+
+        <div class="container">
+            <div class="logo">
+                <img src="_files/img/logo.png">
+            </div>
+        </div>
+        <div class="nav container">
+            <ul class="clearfix container">
+
+                <li>
+                    <!-- <a href="${ctx}/" [#if node?? && !node.parent??] [/#if]>医院首页</a> -->
+                    <a href="#">医院首页</a>
+                </li>
+                <li>
+                    <a href="#">医院概况</a>
+                    <ul>
+                        <!-- [@NodeList parentId=node.id;list] [#list list as node2] -->
+                        <li>
+                            <a href="#">医院简介</a>
+                        </li>
+                        <li>
+                            <a href="#">领导介绍</a>
+                        </li>
+                        <!-- [/#list] [/@NodeList] -->
+                    </ul>
+                </li>
+                <li>
+                    <!-- <a href="${ctx}/" [#if node?? && !node.parent??] [/#if]>医院首页</a> -->
+                    <a href="#">医院文化</a>
+                    <ul>
+                        <!-- [@NodeList parentId=node.id;list] [#list list as node2] -->
+                        <li>
+                            <a href="#">医院简介</a>
+                        </li>
+                        <li>
+                            <a href="#">领导介绍</a>
+                        </li>
+                        <!-- [/#list] [/@NodeList] -->
+                    </ul>
+                </li>
+                <li>
+                    <!-- <a href="${ctx}/" [#if node?? && !node.parent??] [/#if]>医院首页</a> -->
+                    <a href="#">医院首页</a>
+                </li>
+                <li>
+                    <!-- <a href="${ctx}/" [#if node?? && !node.parent??] [/#if]>医院首页</a> -->
+                    <a href="#">医院首页</a>
+                </li>
+                <li>
+                    <!-- <a href="${ctx}/" [#if node?? && !node.parent??] [/#if]>医院首页</a> -->
+                    <a href="#">医院首页</a>
+                </li>
+                <li>
+                    <!-- <a href="${ctx}/" [#if node?? && !node.parent??] [/#if]>医院首页</a> -->
+                    <a href="#">医院首页</a>
+                </li>
+                <li>
+                    <!-- <a href="${ctx}/" [#if node?? && !node.parent??] [/#if]>医院首页</a> -->
+                    <a href="#">医院首页</a>
+                </li>
+                <li>
+                    <!-- <a href="${ctx}/" [#if node?? && !node.parent??] [/#if]>医院首页</a> -->
+                    <a href="#">医院首页</a>
+                </li>
+                <li>
+                    <!-- <a href="${ctx}/" [#if node?? && !node.parent??] [/#if]>医院首页</a> -->
+                    <a href="#">医院首页</a>
+                </li>
+                <li>
+                    <!-- <a href="${ctx}/" [#if node?? && !node.parent??] [/#if]>医院首页</a> -->
+                    <a href="#">医院首页</a>
+                </li>
+                <li>
+                    <!-- <a href="${ctx}/" [#if node?? && !node.parent??] [/#if]>医院首页</a> -->
+                    <a href="#">医院首页</a>
+                </li>
+                <!-- [@NodeList;list] [#list list as node] -->
+
+                <!-- <li>
+                                <a href="${node.url}">${node.name}</a>
+                                <ul>
+                                    [@NodeList parentId=node.id;list] [#list list as node2]
+                                    <li>
+                                        <a href="${node2.url}">${node2.name}</a>
+                                    </li>
+                                    [/#list] [/@NodeList]
+                                </ul>
+                            </li> -->
+
+                <!-- [/#list] [/@NodeList] -->
+            </ul>
+            <!-- <h1 class="location">
+                <i class="icons-sprite icons-home"></i>
+                <span>您的位置:</span>
+                <a>济宁医学院附属医院</a> &gt; -->
+                <!-- <a class="cur">${node.name}</a> -->
+                <!-- <a class="cur">医院纪委网</a>
+            </h1> -->
+        </div>
+
+    </header>
+    <div class="container">
+        <h1 class="location">
+            <i class="icons-sprite icons-home"></i>
+            <span>您的位置 :&nbsp;&nbsp;</span>济宁医学院附属医院 &gt;
+             <!-- [#list node.hierarchy as n] -->
+             <a>医院纪委网</a> &gt;
+            <a href="${n.url}" class="cur">库米大事件</a>
+             <!-- [/#list] -->
+        </h1>
+        <div class="news clearfix">
+            <div class="news-detail">
+                <!-- <h1>${info.title}</h1> -->
+                <h1>库米大事件</h1>
+                <p class="fabu">
+                    <!-- <span>发布时间: ${info.publishDate?string('yyyy-MM-dd HH:mm:ss')}</span>
+                    <span>作者：${info.author}</span>
+                    <span>来源：${info.source}</span> -->
+                    <span>发布时间 : 2018-05-01</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span>作者：小猫</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span>来源：库米云微</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <!-- <span>点击数：</span> -->
+                    <!-- <span id="info_views">
+                        325
+                        <!-- <script type="text/javascript">
+                            $("#info_views").load("${dy}/info_views/${info.id}.jspx?d=" + new Date() * 1);
+                        </script> -->
+                    <!-- </span>  -->
+                </p>
+
+                <div class="content-detail">
+                    <!-- [#noescape]${text}[/#noescape] -->
+                    5月30日，院团委联合儿童康复科举办“关爱儿童成长 青春共筑梦想”六一儿童节联欢会。济宁市残疾人联合会副理事长王若迅、康复部主任孟繁利，党委副书记、常务副院长于世鹏出席了联欢会，医院儿童康复科、团委工作人员及患儿家长等200余人欢聚一堂，共同为孩子们庆祝节日。<br/>
+                    &nbsp; &nbsp;5月30日，院团委联合儿童康复科举办“关爱儿童成长 青春共筑梦想”六一儿童节联欢会。济宁市残疾人联合会副理事长王若迅、康复部主任孟繁利，党委副书记、常务副院长于世鹏出席了联欢会，医院儿童康复科、团委工作人员及患儿家长等200余人欢聚一堂，共同为孩子们庆祝节日。
+                    5月30日，院团委联合儿童康复科举办“关爱儿童成长 青春共筑梦想”六一儿童节联欢会。济宁市残疾人联合会副理事长王若迅、康复部主任孟繁利，党委副书记、常务副院长于世鹏出席了联欢会，医院儿童康复科、团委工作人员及患儿家长等200余人欢聚一堂，共同为孩子们庆祝节日。
+                    5月30日，院团委联合儿童康复科举办“关爱儿童成长 青春共筑梦想”六一儿童节联欢会。济宁市残疾人联合会副理事长王若迅、康复部主任孟繁利，党委副书记、常务副院长于世鹏出席了联欢会，医院儿童康复科、团委工作人员及患儿家长等200余人欢聚一堂，共同为孩子们庆祝节日。<br/>
+                    5月30日，院团委联合儿童康复科举办“关爱儿童成长 青春共筑梦想”六一儿童节联欢会。济宁市残疾人联合会副理事长王若迅、康复部主任孟繁利，党委副书记、常务副院长于世鹏出席了联欢会，医院儿童康复科、团委工作人员及患儿家长等200余人欢聚一堂，共同为孩子们庆祝节日。
+                    5月30日，院团委联合儿童康复科举办“关爱儿童成长 青春共筑梦想”六一儿童节联欢会。济宁市残疾人联合会副理事长王若迅、康复部主任孟繁利，党委副书记、常务副院长于世鹏出席了联欢会，医院儿童康复科、团委工作人员及患儿家长等200余人欢聚一堂，共同为孩子们庆祝节日。
+                    5月30日，院团委联合儿童康复科举办“关爱儿童成长 青春共筑梦想”六一儿童节联欢会。济宁市残疾人联合会副理事长王若迅、康复部主任孟繁利，党委副书记、常务副院长于世鹏出席了联欢会，医院儿童康复科、团委工作人员及患儿家长等200余人欢聚一堂，共同为孩子们庆祝节日。
+                    5月30日，院团委联合儿童康复科举办“关爱儿童成长 青春共筑梦想”六一儿童节联欢会。济宁市残疾人联合会副理事长王若迅、康复部主任孟繁利，党委副书记、常务副院长于世鹏出席了联欢会，医院儿童康复科、团委工作人员及患儿家长等200余人欢聚一堂，共同为孩子们庆祝节日。
+                    5月30日，院团委联合儿童康复科举办“关爱儿童成长 青春共筑梦想”六一儿童节联欢会。济宁市残疾人联合会副理事长王若迅、康复部主任孟繁利，党委副书记、常务副院长于世鹏出席了联欢会，医院儿童康复科、团委工作人员及患儿家长等200余人欢聚一堂，共同为孩子们庆祝节日。
+                    5月30日，院团委联合儿童康复科举办“关爱儿童成长 青春共筑梦想”六一儿童节联欢会。济宁市残疾人联合会副理事长王若迅、康复部主任孟繁利，党委副书记、常务副院长于世鹏出席了联欢会，医院儿童康复科、团委工作人员及患儿家长等200余人欢聚一堂，共同为孩子们庆祝节日。<br/>
+                    5月30日，院团委联合儿童康复科举办“关爱儿童成长 青春共筑梦想”六一儿童节联欢会。济宁市残疾人联合会副理事长王若迅、康复部主任孟繁利，党委副书记、常务副院长于世鹏出席了联欢会，医院儿童康复科、团委工作人员及患儿家长等200余人欢聚一堂，共同为孩子们庆祝节日。
+                    5月30日，院团委联合儿童康复科举办“关爱儿童成长 青春共筑梦想”六一儿童节联欢会。济宁市残疾人联合会副理事长王若迅、康复部主任孟繁利，党委副书记、常务副院长于世鹏出席了联欢会，医院儿童康复科、团委工作人员及患儿家长等200余人欢聚一堂，共同为孩子们庆祝节日。<br/>
+                    5月30日，院团委联合儿童康复科举办“关爱儿童成长 青春共筑梦想”六一儿童节联欢会。济宁市残疾人联合会副理事长王若迅、康复部主任孟繁利，党委副书记、常务副院长于世鹏出席了联欢会，医院儿童康复科、团委工作人员及患儿家长等200余人欢聚一堂，共同为孩子们庆祝节日。
+                </div>
+            </div>
+            <div class="bottom-detail clearfix">
+                <!-- <div class="share float-right">
+                    <div class="bdsharebuttonbox mt20 bdshare-button-style0-16" data-bd-bind="1476676052838">
+                        <a href="#" class="bds_more a-none" data-cmd="more">分享到：</a>
+                        <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+                        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+                        <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+                        <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+                        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+                    </div>
+                    <script>
+                        window._bd_share_config = {
+                            "common": {
+                                "bdSnsKey": {},
+                                "bdText": "",
+                                "bdMini": "2",
+                                "bdMiniList": false,
+                                "bdPic": "",
+                                "bdStyle": "0",
+                                "bdSize": "16"
+                            },
+                            "share": {}
+                        };
+                        with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script'))
+                            .src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' +
+                            ~(-new Date() / 36e5)];
+                    </script>
+                </div> -->
+                <div>
+                    <ul>
+                        <!-- [@InfoPrev id=info.id;bean] [#if bean??] -->
+                        <li>
+                            <span>上一条：</span>
+                            <!-- <a href="${bean.url}">${bean.title!}</a> -->
+                            <a href="${bean.url}">不为谁而做的歌</a>
+                            <span style="color: #333; font-size: 14px;">[2018-05-30]</span>
+                            <!-- <span>${bean.publishDate?string('yyyy-MM-dd')}</span> -->
+                        </li>
+                        <!-- [#else]
+                        <li>
+                            <span>上一条：</span>
+                            <span>没有了</span>
+                        </li> -->
+                        <!-- [/#if] [/@InfoPrev] [@InfoNext id=info.id;i] [#if i??] -->
+                        <li>
+                            <span>下一条：</span>
+                            <!-- <a href="${i.url}">${i.title!}</a> -->
+                            <a href="${bean.url}">那些你很冒险的梦</a>
+                            <!-- <span>${i.publishDate?string('yyyy-MM-dd')}</span> -->
+                            <span style="color: #333; font-size: 14px;">[2018-06-01]</span>
+                        </li>
+                        <!-- [#else]
+                        <li>
+                            <span>下一条：</span>
+                            <span>没有了</span>
+                        </li>
+                        [/#if] [/@InfoNext ] -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+            <!-- <div class="container us">
+                <span><i class="icons-sprite icons-mailbox"></i><a href="mailto:yz@jyfy.com.cn" style="color: #000000">院长信箱</a></span>
+                <span><i class="icons-sprite icons-aboutUs"></i><a href="/node/100.jspx" style="color: #000000">关于我们</a></span>
+                <span><i class="icons-sprite icons-copyright"></i><a href="/info/837.jspx" style="color: #000000">版权申明</a></span>
+                <span><i class="icons-sprite icons-legal"></i><a href="/info/821.jspx" style="color: #000000">法律责任</a></span>
+            </div> -->
+            <div class="footer-info">
+                <!--<div class="footer-info" style="background-color: #01acc8;">-->
+                <p>Copyright © 2012- 2017 www.jyfy.com.cn All Rights Reserved. 济宁医学院附属医院 版权所有</p>
+                <p>总机电话：0537-2903399 医院传真：0537－2213030 地址：山东省济宁市古槐路89号
+                    <a href="http://www.miitbeian.gov.cn/">鲁ICP备10206357号</a> 济宁联网备案：37080221000119</p>
+                <p>急救中心联系电话：0537-2903116、2903366、2903636 咨询电话（济宁市联通用户免费）：0537-2966666
+                    <a href="http://exmail.qq.com/domain/jyfy.com.cn">信箱登录</a>
+                </p>
+                <p>医院投诉电话：2903333 地点：高压氧东侧
+                    <!--<a href="http://www.cnzz.com/stat/website.php?web_id=2101885" target="_blank" title="站长统计"><img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif"></a>-->
+                    <!--<img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif">-->
+                    <script type="text/javascript">
+                        var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+                        document.write(unescape("%3Cspan id='cnzz_stat_icon_1261475183'%3E%3C/span%3E%3Cscript src='" +
+                            cnzz_protocol +
+                            "s4.cnzz.com/stat.php%3Fid%3D1261475183%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"
+                        ));
+                    </script>
+                    </a>
+                </p>
+                <a target="_blank" href="http://bszs.conac.cn/sitename?method=show&id=2994E5E3CC9D7D04E053022819AC593D">
+                    <span class="icons-sprite icons-blue"></span>
+                </a>
+                <div class="portal">
+                    <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=37080202000233">
+                        <span class="icons-sprite icons-1 float-left"></span>
+                        <p class="float-left">鲁公网安备 37080202000233号</p>
+                    </a>
+    
+                </div>
+    
+            </div>
+    </footer>
+    <!-- [#include 'footer.html'/] -->
+
+</body>
+
+</html>
+<!-- [/#escape] -->

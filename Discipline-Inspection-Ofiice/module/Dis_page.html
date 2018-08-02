@@ -1,0 +1,27 @@
+<div class="query clearfix package-num">
+    <a href="${paging(page-1)}" class="pre">
+        <div class="arrow-pre">
+            <div class="pre1"></div>
+            <div class="pre2"></div>
+        </div>
+    </a>
+    [#assign start=page-4/]
+    [#if start<1][#assign start=1/][/#if] 
+    [#assign end=start+8/][#if end>pagedList.totalPages][#assign end=pagedList.totalPages/][/#if] 
+    [#if end<1][#assign end=1/][/#if] 
+    [#if end-start<8][#assign start=end-8/][/#if][#if start<1][#assign start=1/][/#if] 
+    [#list start..end as p] 
+    <a [#if page!=p] href="${paging(p)}"[/#if] class="[#if page!=p]num[#else]num num-active[/#if]">${p}</a>
+    [/#list]
+     
+    [#if page < pagedList.totalPages] 
+    <a href="${paging(page+1)}" class="next">
+        [#else]
+            <a href="${paging(page)}" class="next">
+                [/#if]
+                <div class="arrow-next">
+                    <div class="next1"></div>
+                    <div class="next2"></div>
+                </div>
+            </a>
+</div>
